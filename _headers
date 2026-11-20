@@ -27,3 +27,6 @@
 
 /clips/*
   Cache-Control: public, max-age=604800
+
+/cinematic.*
+  Cache-Control: no-cache
