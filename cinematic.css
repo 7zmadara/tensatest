@@ -1,0 +1,19 @@
+#cine{position:fixed;inset:0;z-index:99999;background:#05070b;color:#eef3fa;overflow:hidden;font-family:system-ui,-apple-system,Segoe UI,sans-serif;touch-action:none;will-change:opacity}
+#cine canvas{position:absolute;inset:0;width:100%;height:100%}
+#cine .c-glow{position:absolute;left:50%;top:50%;width:60vmin;height:60vmin;margin:-30vmin 0 0 -30vmin;border-radius:50%;background:radial-gradient(circle,#9be7ff 0,#3a8fff55 35%,transparent 70%);filter:blur(8px);will-change:transform,opacity}
+#cine .c-layer{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 6vw;will-change:transform,opacity,filter}
+#cine h1{margin:0;font-size:clamp(2.4rem,9vw,7rem);letter-spacing:.04em;font-weight:800;line-height:1}
+#cine h2{margin:0;font-size:clamp(1.6rem,5.5vw,4rem);font-weight:700;letter-spacing:.02em}
+#cine p{margin:1rem 0 0;font-size:clamp(.9rem,1.8vw,1.25rem);opacity:.75;max-width:34ch}
+#cine .c-hint{position:absolute;bottom:5vh;left:0;right:0;text-align:center;font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7;animation:cpulse 2s ease-in-out infinite}
+#cine .c-hint i{display:block;width:1px;height:38px;margin:10px auto 0;background:linear-gradient(#9be7ff,transparent);animation:cdrop 1.6s ease-in-out infinite}
+#cine .c-bar{position:absolute;left:0;top:0;height:3px;width:0;background:#9be7ff;box-shadow:0 0 12px #9be7ff}
+#cine .c-skip{position:absolute;right:20px;top:18px;background:none;border:1px solid #ffffff44;color:#eef3fa;padding:6px 14px;border-radius:99px;cursor:pointer;font-size:.8rem;z-index:2}
+#cine .c-skip:hover{background:#ffffff18}
+@keyframes cpulse{50%{opacity:.25}}
+@keyframes cdrop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* app-wide scroll animation */
+.cine-in{animation:cinein .7s cubic-bezier(.2,.7,.2,1) both}
+@keyframes cinein{from{opacity:0;transform:translateY(28px) scale(.98)}to{opacity:1;transform:none}}
+#cine-progress{position:fixed;left:0;top:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#5ad1ff,#9b8cff);z-index:99998;pointer-events:none}
+@media (prefers-reduced-motion:reduce){.cine-in{animation:none}}
